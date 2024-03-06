@@ -29,3 +29,13 @@ pd.DataFrame([survived_embark,dead_embark],index=['Survived','Dead'])
 embark_df.plot(kind='bar', stacked=True) plt.xlabel('Embarked')
 plt.ylabel('Number of passengers') plt.title('Survival rate by port of
 embarkation') st.pyplot() 
+embarkation') st.pyplot() 
+
+'''
+Visualizamos la importancia de las variables
+'''
+survived_embark =
+train_df[train_df['Survived']==1]['Embarked'].value_counts(sort=True)
+dead_embark = train_df[train_df['Survived']==0]['Embarked'].value_counts(sort=False)
+st.write('Visualización del modelo y datos') st.write('Importancia de características en
+el modelo') st.bar_chart(importances) 
